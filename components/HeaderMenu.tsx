@@ -37,9 +37,9 @@ export default function HeaderMenu() {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 pl-2 pr-4 py-1.5 rounded-full hover:bg-stone-100 transition-all duration-200 border border-transparent hover:border-stone-200"
+        className="flex items-center gap-2 pl-2 pr-4 py-1.5 rounded-full bg-white/45 hover:bg-white/90 transition-all duration-200 border border-transparent hover:border-amber-200/70 hover:shadow-[0_8px_18px_rgba(76,58,104,0.1)] active:scale-[0.98]"
       >
-        <div className="size-8 rounded-full bg-linear-to-br from-amber-200 to-amber-100 text-amber-800 flex items-center justify-center font-bold shadow-sm ring-1 ring-amber-300/50">
+        <div className="size-8 rounded-full bg-linear-to-br from-[#e9ddff] to-[#ffe8ba] text-[#59447b] flex items-center justify-center font-bold shadow-sm ring-1 ring-white/90">
           {userEmail ? (
             userEmail.charAt(0).toUpperCase()
           ) : (
@@ -58,9 +58,9 @@ export default function HeaderMenu() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute right-0 mt-2 w-56 bg-surface rounded-3xl shadow-soft border border-border py-2 z-50 overflow-hidden"
+            className="absolute right-0 mt-3 w-60 bg-white/90 backdrop-blur-2xl rounded-3xl shadow-[0_22px_48px_rgba(76,58,104,0.16)] border border-white/90 py-2 z-50 overflow-hidden"
           >
-            <div className="px-4 py-3 border-b border-stone-100 bg-stone-50/50">
+            <div className="px-4 py-3 border-b border-violet-100/70 bg-linear-to-br from-violet-50/75 to-amber-50/60">
               <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-0.5">
                 Tài khoản
               </p>

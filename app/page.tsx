@@ -7,7 +7,11 @@ export default function HomePage() {
     <div className="min-h-screen bg-neutral flex flex-col selection:bg-amber-200 selection:text-amber-900 relative overflow-hidden">
       {/* Decorative background grid and blurs */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_-30%,#fef3c7,transparent)] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_-30%,#f7edff,transparent)] pointer-events-none"></div>
+      <div className="fairy-glow fairy-orb absolute -top-32 left-[10%] size-72 rounded-full opacity-70" />
+      <div className="fairy-glow absolute top-[36%] right-[8%] size-56 rounded-full opacity-45" />
+      <div className="absolute top-[18%] left-[18%] size-2 rounded-full bg-white shadow-[0_0_18px_6px_rgba(216,168,91,0.55)]" />
+      <div className="absolute top-[28%] right-[24%] size-1.5 rounded-full bg-white shadow-[0_0_16px_5px_rgba(181,155,224,0.65)]" />
 
       <div className="absolute top-0 inset-x-0 h-screen overflow-hidden pointer-events-none flex justify-center">
         <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-amber-300/20 rounded-full blur-[100px] mix-blend-multiply" />

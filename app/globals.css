@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfaf7;
+  --foreground: #2b2540;
 }
 
 @theme inline {
@@ -13,29 +13,68 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
 
-  --color-primary: #1c1917;
-  --color-secondary: #57534e;
-  --color-tertiary: #d97706;
-  --color-neutral: #fafaf9;
+  --color-primary: #30264d;
+  --color-secondary: #6e6581;
+  --color-tertiary: #d8a85b;
+  --color-neutral: #fbfaf7;
   --color-surface: #ffffff;
-  --color-border: #e7e5e4;
-  --color-error: #dc2626;
+  --color-border: #e9e3f0;
+  --color-error: #c84d65;
 
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-3xl: 24px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-3xl: 30px;
 
-  --shadow-soft: 0 8px 30px rgb(0 0 0 / 0.04);
-  --shadow-soft-hover: 0 20px 40px rgb(0 0 0 / 0.08);
+  --shadow-soft: 0 16px 40px rgb(65 48 91 / 0.08);
+  --shadow-soft-hover: 0 24px 58px rgb(65 48 91 / 0.16);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(
-    --color-neutral
-  ); /* Use neutral as default background per design */
-  color: var(--color-primary); /* Use primary for text */
+  background:
+    radial-gradient(circle at 8% 8%, rgb(232 222 255 / 0.6), transparent 28rem),
+    radial-gradient(circle at 92% 18%, rgb(255 232 190 / 0.52), transparent 26rem),
+    linear-gradient(135deg, #fbfaf7 0%, #f8f5fc 52%, #fffaf2 100%);
+  color: var(--color-primary);
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgb(216 168 91 / 0.3);
+  color: #30264d;
+}
+
+.fairy-glow {
+  background: radial-gradient(circle, rgb(255 255 255 / 0.95), rgb(236 222 255 / 0.45) 38%, transparent 72%);
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.fairy-orb {
+  animation: fairy-float 8s ease-in-out infinite;
+}
+
+@keyframes fairy-float {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -12px, 0) scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Fix iOS auto-zoom when focusing on inputs */
@@ -53,22 +92,39 @@ select {
   cursor: pointer;
 }
 
+button,
+a,
+input,
+textarea,
+select {
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgb(216 168 91 / 0.55);
+  outline-offset: 3px;
+}
+
 /* Design System Buttons */
 .btn-primary {
-  @apply inline-flex items-center justify-center shrink-0 gap-1.5 px-4 py-4 bg-primary text-surface rounded-xl hover:bg-[#292524] transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-soft-hover;
+  @apply inline-flex items-center justify-center shrink-0 gap-2 px-5 py-3.5 bg-primary text-surface rounded-xl hover:bg-[#403460] transition-all duration-200 font-semibold shadow-[0_10px_24px_rgba(48,38,77,0.18)] hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(48,38,77,0.24)] active:scale-[0.97];
 }
 
 .btn-amber {
-  @apply inline-flex items-center justify-center shrink-0 gap-1.5 px-3 py-2.5 bg-tertiary text-primary rounded-full transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-soft-hover;
+  @apply inline-flex items-center justify-center shrink-0 gap-2 px-4 py-3 bg-tertiary text-primary rounded-full transition-all duration-200 font-semibold shadow-[0_8px_18px_rgba(216,168,91,0.22)] hover:-translate-y-0.5 hover:shadow-[0_14px_24px_rgba(216,168,91,0.32)] active:scale-[0.97];
 }
 
 .btn-outline,
 .btn {
-  @apply inline-flex items-center justify-center shrink-0 gap-1.5 px-4 py-4 bg-transparent text-secondary rounded-xl border border-border hover:bg-neutral transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-soft-hover;
+  @apply inline-flex items-center justify-center shrink-0 gap-2 px-5 py-3.5 bg-white/60 text-secondary rounded-xl border border-border hover:bg-white hover:text-primary transition-all duration-200 font-semibold hover:-translate-y-0.5 hover:shadow-soft active:scale-[0.97];
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center shrink-0 gap-1.5 px-4 py-4 bg-secondary text-surface rounded-xl hover:bg-stone-700 transition-all duration-300 font-medium hover:-translate-y-1 hover:shadow-soft-hover;
+  @apply inline-flex items-center justify-center shrink-0 gap-2 px-5 py-3.5 bg-secondary text-surface rounded-xl hover:bg-[#5b526c] transition-all duration-200 font-semibold hover:-translate-y-0.5 hover:shadow-soft-hover active:scale-[0.97];
 }
 
 .badge-error {
@@ -76,7 +132,7 @@ select {
 }
 
 .card-feature {
-  @apply bg-white/70 backdrop-blur-xl rounded-3xl p-[32px] shadow-soft hover:-translate-y-1 hover:shadow-soft-hover transition-all duration-300;
+  @apply bg-white/70 backdrop-blur-xl rounded-3xl p-8 shadow-soft border border-white/80 hover:-translate-y-1 hover:shadow-soft-hover transition-all duration-200;
 }
 
 .title {
