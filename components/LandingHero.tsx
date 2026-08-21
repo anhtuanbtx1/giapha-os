@@ -38,7 +38,7 @@ export default function LandingHero({ siteName }: LandingHeroProps) {
   return (
     <>
       <motion.div
-        className="max-w-5xl text-center space-y-12 w-full relative z-10"
+        className="max-w-6xl text-center space-y-12 w-full relative z-10"
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
@@ -49,18 +49,18 @@ export default function LandingHero({ siteName }: LandingHeroProps) {
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-amber-800 bg-white/60 rounded-full shadow-[0_2px_10px_-3px_rgba(0,0,0,0.1)] border border-amber-200/50 relative overflow-hidden group"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-[#6f4f1c] bg-white/65 backdrop-blur-md rounded-full shadow-[0_8px_22px_rgba(216,168,91,0.16)] border border-amber-200/70 relative overflow-hidden group"
           >
             <Sparkles className="size-4 text-amber-500" />
             Nền tảng gia phả hiện đại & bảo mật
             <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
           </motion.div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-serif font-bold text-stone-900 tracking-tight leading-[1.1] max-w-4xl">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-serif font-bold bg-linear-to-br from-[#30264d] via-[#59447b] to-[#b87935] bg-clip-text text-transparent tracking-tight leading-[1.08] max-w-4xl drop-shadow-[0_8px_20px_rgba(90,62,122,0.12)]">
             <span className="block">{siteName}</span>
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-stone-600 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-lg sm:text-xl md:text-2xl text-[#71677f] max-w-2xl mx-auto leading-relaxed font-light">
             Gìn giữ và lưu truyền những giá trị, cội nguồn và truyền thống tốt
             đẹp của dòng họ cho các thế hệ mai sau.
           </p>
@@ -75,7 +75,7 @@ export default function LandingHero({ siteName }: LandingHeroProps) {
 
           <Link
             href="/login"
-            className="group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 text-base sm:text-lg font-bold text-white bg-primary border border-stone-800 hover:bg-stone-800 hover:border-stone-700 rounded-xl shadow-xl shadow-stone-900/10 hover:shadow-2xl hover:shadow-stone-900/20 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 w-full sm:w-auto overflow-hidden relative"
+            className="group inline-flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 text-base sm:text-lg font-bold text-white bg-linear-to-r from-[#30264d] via-[#4a386c] to-[#6f4f8e] border border-white/20 hover:brightness-110 rounded-2xl shadow-[0_16px_34px_rgba(48,38,77,0.22)] hover:shadow-[0_22px_44px_rgba(48,38,77,0.3)] transition-all duration-200 hover:-translate-y-1 active:scale-[0.98] active:translate-y-0 w-full sm:w-auto overflow-hidden relative"
           >
             <span className="relative z-10 flex items-center gap-3">
               Đăng nhập để xem thông tin
@@ -85,7 +85,7 @@ export default function LandingHero({ siteName }: LandingHeroProps) {
         </motion.div>
 
         <motion.div
-          className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-left  border-t border-stone-200/50 relative"
+          className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-left relative"
           variants={staggerContainer}
         >
           {[
@@ -109,11 +109,11 @@ export default function LandingHero({ siteName }: LandingHeroProps) {
               key={idx}
               variants={fadeIn}
               whileHover={{ y: -5 }}
-              className="card-feature flex flex-col items-start group relative overflow-hidden"
+              className="card-feature flex flex-col items-start group relative overflow-hidden bg-white/58"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-amber-100/50 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-              <div className="p-3.5 bg-white rounded-2xl mb-6 shadow-sm ring-1 ring-stone-100 group-hover:scale-110 group-hover:shadow-md transition-all duration-300 relative z-10">
+              <div className="p-3.5 bg-linear-to-br from-white to-amber-50 rounded-2xl mb-6 shadow-[0_8px_20px_rgba(216,168,91,0.14)] ring-1 ring-amber-100 group-hover:scale-105 group-hover:-rotate-3 group-hover:shadow-md transition-all duration-200 relative z-10">
                 {feature.icon}
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-stone-800 mb-3 font-serif relative z-10 group-hover:text-amber-900 transition-colors">
